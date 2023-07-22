@@ -7,6 +7,7 @@ export const assets = [
     {url:"./Pez.png", name:"normalPez"},
     {url:"./botonSF.png", name:"normalBoton"},
     {url:"./estrellaLlenaSF.png", name:"normalEstrellaL"},
-    {url:"./estrellaVaciaSF.png", name:"normalestrellaV"},
-    {url:"./tableroSF.png", name:"normalTablero"}
+    {url:"./estrellaVaciaSF.png", name:"normalEstrellaV"},
+    {url:"./tableroSF.png", name:"normalTablero"},
+    {url:"./cartelChicoSF.png", name:"normalCartelito"}
 ];
