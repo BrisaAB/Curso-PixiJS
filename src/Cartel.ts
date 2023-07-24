@@ -1,5 +1,6 @@
 import { Container, NineSlicePlane,Texture,Text} from "pixi.js";
 import { Objeto } from "./Objeto";
+import { ModuloCartel } from "./ModuloCartel";
 
 export class Cartel extends Container {
     constructor(windowx: number, windowy: number){
@@ -42,7 +43,34 @@ export class Cartel extends Container {
                                             tablero.x+(tablero.width*escalaT*7/9),
                                             tablero.y+(tablero.height*escalaT/5),
                                             0.2,0.2,20);
+        const mod1: ModuloCartel = new ModuloCartel("Puntos:","nada","",(cartel.width)*escalaC);
+
+        mod1.x = tablero.x+((1/6)*(tablero.width*escalaT));
+        mod1.y = (tablero.height*escalaT*2/5);
         
+        const mod2: ModuloCartel = new ModuloCartel("","normalPez","X 152",(cartel.width)*escalaC);
+
+        mod2.x = tablero.x+((1/6)*(tablero.width*escalaT));
+        mod2.y = (tablero.height*escalaT*5/10);
+        
+        const mod3: ModuloCartel = new ModuloCartel("","normalPez","X 2",(cartel.width)*escalaC);
+
+        mod3.x = tablero.x+((1/6)*(tablero.width*escalaT));
+        mod3.y = (tablero.height*escalaT*6/10);//La idea es que tengan diferentes imagenes de peces, pero por ahora uso la misma
+        
+        const mod4: ModuloCartel = new ModuloCartel("","normalPez","X 16",(cartel.width)*escalaC);
+
+        mod4.x = tablero.x+((1/6)*(tablero.width*escalaT));
+        mod4.y = (tablero.height*escalaT*7/10);
+
+        const boton: Objeto = new Objeto("normalBoton",
+                                        tablero.x+(tablero.width*(escalaT)/2),
+                                        (tablero.height*escalaT*9/10),
+                                        0.08,0.08);
+        
+        const tBoton = new Text("Continuar", {fontSize: 35, fill: 0xa9ffbf});
+        tBoton.x = tablero.x+(tablero.width*(escalaT)/2)-(tBoton.width/2);
+        tBoton.y = (tablero.height*escalaT*9/10)-(tBoton.height*2/3)
 
         this.addChild(tablero);
         this.addChild(cartel);
@@ -50,5 +78,11 @@ export class Cartel extends Container {
         this.addChild(estrella1);
         this.addChild(estrella2);
         this.addChild(estrella3);
+        this.addChild(mod1);
+        this.addChild(mod2);
+        this.addChild(mod3);
+        this.addChild(mod4);
+        this.addChild(boton);
+        this.addChild(tBoton);
     }
 }
