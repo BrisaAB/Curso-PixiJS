@@ -9,5 +9,6 @@ export const assets = [
     {url:"./estrellaLlenaSF.png", name:"normalEstrellaL"},
     {url:"./estrellaVaciaSF.png", name:"normalEstrellaV"},
     {url:"./tableroSF.png", name:"normalTablero"},
-    {url:"./cartelChicoSF.png", name:"normalCartelito"}
+    {url:"./cartelChicoSF.png", name:"normalCartelito"},
+    {url:"./nada.png", name:"nada"}
 ];

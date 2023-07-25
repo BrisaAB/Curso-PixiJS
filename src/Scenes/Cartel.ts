@@ -1,6 +1,6 @@
 import { Container, NineSlicePlane,Texture,Text} from "pixi.js";
-import { Objeto } from "./Objeto";
-import { ModuloCartel } from "./ModuloCartel";
+import { ModuloCartel } from "../game/ModuloCartel";
+import { Objeto } from "../game/Objeto";
 
 export class Cartel extends Container {
     constructor(windowx: number, windowy: number){
