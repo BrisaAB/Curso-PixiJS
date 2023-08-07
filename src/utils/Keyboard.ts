@@ -1,5 +1,9 @@
+import { utils } from "pixi.js";
+
 export class Keyboard{
     public static readonly state: Map<string, boolean> = new Map();
+
+    public static readonly down : utils.EventEmitter = new utils.EventEmitter;
 
     private constructor(){}
 
@@ -14,6 +18,7 @@ export class Keyboard{
     }
 
     private static onKeyDown(e: KeyboardEvent){
+        Keyboard.down.emit(e.code);
         Keyboard.state.set(e.code,true);
     }
 
