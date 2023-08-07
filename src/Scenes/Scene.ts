@@ -1,7 +1,7 @@
 import { Container} from "pixi.js";
 import { TerryCania } from "../game/TerryCania";
-import { Fondo } from "../Fondo";
 import { Pez } from "../game/Pez";
+import { Fondo } from "../game/Fondo";
 
 export class Scene extends Container{
     constructor(windowx: number, windowy: number){

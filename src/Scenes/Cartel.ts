@@ -1,8 +1,11 @@
 import { Container, NineSlicePlane,Texture,Text} from "pixi.js";
 import { ModuloCartel } from "../game/ModuloCartel";
 import { Objeto } from "../game/Objeto";
+import { Button } from "../ui/Button";
 
 export class Cartel extends Container {
+    private buttonMouse:Button;
+
     constructor(windowx: number, windowy: number){
         super();
         const tablero = new NineSlicePlane(
@@ -62,11 +65,19 @@ export class Cartel extends Container {
 
         mod4.x = tablero.x+((1/6)*(tablero.width*escalaT));
         mod4.y = (tablero.height*escalaT*7/10);
-
-        const boton: Objeto = new Objeto("normalBoton",
+        
+        this.buttonMouse = new Button(Texture.from("normalBoton"),
+                                    Texture.from("downButton"),
+                                    Texture.from("overButton"),
+                                    this.onButtonClick.bind(this));
+        
+        this.buttonMouse.x = tablero.x+(tablero.width*(escalaT)/2);
+        this.buttonMouse.y = (tablero.height*escalaT*9/10);
+        this.buttonMouse.scale.set(0.08);
+        /*const boton: Objeto = new Objeto("normalBoton",
                                         tablero.x+(tablero.width*(escalaT)/2),
                                         (tablero.height*escalaT*9/10),
-                                        0.08,0.08);
+                                        0.08,0.08);*/
         
         const tBoton = new Text("Continuar", {fontSize: 35, fill: 0xa9ffbf});
         tBoton.x = tablero.x+(tablero.width*(escalaT)/2)-(tBoton.width/2);
@@ -82,7 +93,10 @@ export class Cartel extends Container {
         this.addChild(mod2);
         this.addChild(mod3);
         this.addChild(mod4);
-        this.addChild(boton);
+        this.addChild(this.buttonMouse);
         this.addChild(tBoton);
+    }
+    private onButtonClick():void{
+        console.log("my new button clicked!");
     }
 }

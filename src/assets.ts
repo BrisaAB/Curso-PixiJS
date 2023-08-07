@@ -6,6 +6,8 @@ export const assets = [
     {url:"./fondoTierraEditado.png", name:"normalTierra"},
     {url:"./Pez.png", name:"normalPez"},
     {url:"./botonSF.png", name:"normalBoton"},
+    {url:"./botonSFdown.png", name:"downButton"},
+    {url:"./botonSFover.png", name:"overButton"},
     {url:"./estrellaLlenaSF.png", name:"normalEstrellaL"},
     {url:"./estrellaVaciaSF.png", name:"normalEstrellaV"},
     {url:"./tableroSF.png", name:"normalTablero"},
