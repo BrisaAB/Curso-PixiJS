@@ -1,8 +1,10 @@
-import { Application, Loader} from 'pixi.js'
+import { Application, Loader, Ticker} from 'pixi.js'
 import { assets } from './assets';
 import { Scene } from './Scenes/Scene';
-import { Cartel } from './Scenes/Cartel';
-import { Keyboard } from './utils/keyboard';
+//import { Cartel } from './Scenes/Cartel';
+import { Keyboard } from './utils/Keyboard';
+import { TickerScene } from './Scenes/TickerScene';
+
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -47,8 +49,15 @@ Loader.shared.add(assets)
 Loader.shared.onComplete.add(()=>{	
 	const myScene = new Scene(app.screen.width, app.screen.height);
 	app.stage.addChild(myScene)
-	const cartelNivel = new Cartel(app.screen.width,app.screen.height);
-	app.stage.addChild(cartelNivel);
+	const TScene = new TickerScene();
+	TScene.x = 733;
+	TScene.y = 50;
+	app.stage.addChild(TScene);
+	Ticker.shared.add(function(deltaFrame){
+		TScene.update(Ticker.shared.deltaMS, deltaFrame)
+	})
+	//const cartelNivel = new Cartel(app.screen.width,app.screen.height);
+	//app.stage.addChild(cartelNivel);
 })
 
 Loader.shared.load();
