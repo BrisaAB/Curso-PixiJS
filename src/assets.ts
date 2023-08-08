@@ -12,5 +12,11 @@ export const assets = [
     {url:"./estrellaVaciaSF.png", name:"normalEstrellaV"},
     {url:"./tableroSF.png", name:"normalTablero"},
     {url:"./cartelChicoSF.png", name:"normalCartelito"},
-    {url:"./nada.png", name:"nada"}
+    {url:"./nada.png", name:"nada"},
+    {url:"Swim_to_right/1.png", name:"normalFish1"},
+    {url:"Swim_to_right/2.png", name:"normalFish2"},
+    {url:"Swim_to_right/3.png", name:"normalFish3"},
+    {url:"Swim_to_right/4.png", name:"normalFish4"},
+    {url:"Swim_to_right/5.png", name:"normalFish5"},
+    {url:"Swim_to_right/6.png", name:"normalFish6"}
 ];
