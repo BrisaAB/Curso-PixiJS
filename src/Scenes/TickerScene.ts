@@ -36,17 +36,16 @@ export class TickerScene extends Container implements IUpdateable{
     update(_deltaTime: number, _deltaFrame: number): void {
         if(Keyboard.state.get("ArrowUp")&&this.endLine>100){
             this.endLine --;
-        }else{
-            if(Keyboard.state.get("ArrowDown")){
-                this.endLine ++;
-            }
+        }else if(Keyboard.state.get("ArrowDown"))
+        {
+            this.endLine ++;
         }
         this.fishAnimated.update(_deltaFrame);
         this.line.clear();
         this.line.lineStyle({color: 0x000000, width: 5, alpha: 1});
         this.line.moveTo(0,0);
         this.line.lineTo(0,this.endLine);
-        console.log("El final es ", this.endLine);
+        //console.log("El final es ", this.endLine);
         //throw new Error("Method not implemented.");
     }
 }

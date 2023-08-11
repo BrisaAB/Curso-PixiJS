@@ -1,18 +1,20 @@
 import { Application, Loader, Ticker} from 'pixi.js'
 import { assets } from './assets';
-import { Scene } from './Scenes/Scene';
+//import { Scene } from './Scenes/Scene';
 //import { Cartel } from './Scenes/Cartel';
 import { Keyboard } from './utils/Keyboard';
-import { TickerScene } from './Scenes/TickerScene';
+//import { TickerScene } from './Scenes/TickerScene';
+import { DvdScene } from './Scenes/DvdScene';
 
-
+export const WHIDTH = 1280;
+export const HEIGHT = 720;
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
 	resolution: window.devicePixelRatio || 1,
 	autoDensity: true,
-	backgroundColor: 0x6495ed,
-	width: 1280,
-	height: 720
+	backgroundColor: 0x000000 /*0x6495ed*/,
+	width: WHIDTH,
+	height: HEIGHT
 });
 
 Keyboard.initialize();
@@ -47,17 +49,20 @@ window.dispatchEvent(new Event("resize"));
 Loader.shared.add(assets)
 
 Loader.shared.onComplete.add(()=>{	
-	const myScene = new Scene(app.screen.width, app.screen.height);
+	/*const myScene = new Scene(app.screen.width, app.screen.height);
 	app.stage.addChild(myScene)
 	const TScene = new TickerScene();
 	TScene.x = 733;
 	TScene.y = 50;
-	app.stage.addChild(TScene);
-	Ticker.shared.add(function(deltaFrame){
-		TScene.update(Ticker.shared.deltaMS, deltaFrame)
-	})
+	app.stage.addChild(TScene);*/
 	//const cartelNivel = new Cartel(app.screen.width,app.screen.height);
 	//app.stage.addChild(cartelNivel);
+	const myDVD = new DvdScene();
+	app.stage.addChild(myDVD);
+	Ticker.shared.add(function(deltaFrame){
+		//TScene.update(Ticker.shared.deltaMS, deltaFrame)
+		myDVD.update(Ticker.shared.deltaMS,deltaFrame);
+	})
 })
 
 Loader.shared.load();
