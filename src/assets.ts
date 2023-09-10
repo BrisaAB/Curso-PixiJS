@@ -19,5 +19,6 @@ export const assets = [
     {url:"Swim_to_right/4.png", name:"normalFish4"},
     {url:"Swim_to_right/5.png", name:"normalFish5"},
     {url:"Swim_to_right/6.png", name:"normalFish6"},
-    {url:"dvd.png", name:"normalDVD"}
+    {url:"dvd.png", name:"normalDVD"},
+    {url:"anzueloSF.png", name:"normalHook"}
 ];

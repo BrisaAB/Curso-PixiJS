@@ -5,10 +5,8 @@ export class PhysicsContainer extends Container{
 
     public acelerationX: number = 0;
     public acelerationY: number = 0;
-
     public update(deltaSeconds:number){
         this.x += this.speed.x*deltaSeconds;
         this.y += this.speed.y*deltaSeconds;
-
     }
 }
